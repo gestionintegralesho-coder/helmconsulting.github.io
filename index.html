@@ -5,28 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HELM Technical Industrial Consulting</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #003366;
       --secondary: #007BFF;
+      --accent: #25d366;
       --light: #f8f9fa;
       --dark: #212529;
       --gray: #6c757d;
+      --light-gray: #e9ecef;
     }
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     body {
       background-color: #fff;
       color: var(--dark);
       line-height: 1.6;
+      font-family: 'Open Sans', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
     }
     header {
       background-color: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
       position: fixed;
       width: 100%;
       top: 0;
@@ -41,19 +48,29 @@
       margin: 0 auto;
     }
     .logo {
-      height: 50px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
-    .logo img {
-      height: 100%;
-      width: auto;
-      object-fit: contain;
+    .logo-icon {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      width: 100px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 24px;
+      box-shadow: 0 4px 12px rgba(0,51,102,0.3);
     }
-    .logo a {
-      display: block;
-      height: 100%;
-    }
-    .logo a:hover {
-      opacity: 0.9;
+    .logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--primary);
+      text-decoration: none;
     }
     .nav-links {
       display: flex;
@@ -62,18 +79,42 @@
     .nav-links a {
       text-decoration: none;
       color: var(--dark);
-      font-weight: 500;
-      transition: color 0.3s;
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.3s, transform 0.2s;
+      position: relative;
     }
     .nav-links a:hover {
       color: var(--secondary);
+      transform: translateY(-2px);
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: width 0.3s ease;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
     }
     .lang-toggle {
-      background: none;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       border: none;
       font-weight: 600;
-      color: var(--secondary);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
       cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      font-size: 14px;
+    }
+    .lang-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,123,255,0.4);
     }
     section {
       padding: 6rem 5% 4rem;
@@ -85,120 +126,396 @@
       color: white;
       text-align: center;
       padding: 8rem 5% 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -80px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
     }
     .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
+      font-size: 3.2rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       max-width: 800px;
-      margin: 0 auto 2rem;
+      margin: 0 auto 2.5rem;
+      opacity: 0.95;
     }
     .btn {
       display: inline-block;
       background: white;
       color: var(--primary);
-      padding: 0.8rem 2rem;
+      padding: 1rem 2.5rem;
       border-radius: 30px;
       text-decoration: none;
-      font-weight: bold;
-      transition: transform 0.3s, box-shadow 0.3s;
+      font-weight: 700;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      border: 2px solid transparent;
     }
     .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+      background: var(--primary);
+      color: white;
+    }
+    .btn-whatsapp {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+    }
+    .btn-whatsapp:hover {
+      background: #128c7e;
+      color: white;
     }
     .section-title {
       text-align: center;
-      margin-bottom: 3rem;
-      font-size: 2.2rem;
+      margin-bottom: 3.5rem;
+      font-size: 2.5rem;
       color: var(--primary);
+      position: relative;
     }
-    .services-grid, .about-content {
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      border-radius: 2px;
+    }
+    .services-grid, .about-content, .clients-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      gap: 2.5rem;
     }
-    .service-card {
-      background: var(--light);
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transition: transform 0.3s;
+    .service-card, .client-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      border: 1px solid var(--light-gray);
     }
-    .service-card:hover {
-      transform: translateY(-5px);
+    .service-card:hover, .client-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      border-color: var(--secondary);
     }
-    .service-card h3 {
+    .service-card h3, .client-card h3 {
       color: var(--primary);
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
+      font-size: 1.4rem;
+    }
+    .service-card i, .client-card i {
+      color: var(--secondary);
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      display: block;
     }
     .contact {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3rem;
     }
-    .map-container {
-      height: 400px;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-    .social-links {
+    .contact-info {
       display: flex;
-      gap: 1rem;
-      margin-top: 1.5rem;
+      flex-direction: column;
+      gap: 1.5rem;
     }
-    .social-links a {
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    .contact-icon {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: var(--primary);
-      color: white;
+      flex-shrink: 0;
+      font-size: 18px;
+    }
+    .map-container {
+      height: 450px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      border: 3px solid var(--light-gray);
+    }
+    .social-section {
+      background-color: var(--light);
+      padding: 4rem 5%;
+    }
+    .social-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .social-title {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 2rem;
+    }
+    .social-links-main {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 70px;
+      height: 70px;
+      background: white;
+      color: var(--primary);
       border-radius: 50%;
       text-decoration: none;
-      transition: background 0.3s;
+      transition: all 0.3s ease;
+      font-size: 28px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      border: 2px solid transparent;
     }
-    .social-links a:hover {
-      background: var(--secondary);
+    .social-link:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      border-color: var(--secondary);
+      color: var(--secondary);
     }
+    .social-link.linkedin:hover { color: #0A66C2; }
+    .social-link.twitter:hover { color: #1DA1F2; }
+    .social-link.instagram:hover { color: #E1306C; }
+    .social-link.facebook:hover { color: #1877F2; }
+    .social-link.youtube:hover { color: #FF0000; }
     footer {
       background: var(--dark);
       color: white;
       text-align: center;
-      padding: 2rem;
+      padding: 2.5rem;
+    }
+    /* Imágenes Section */
+    .images-section {
+      background-color: var(--light);
+    }
+    .images-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .toggle-images-btn {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,51,102,0.2);
+    }
+    .toggle-images-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,51,102,0.3);
+    }
+    .images-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+    .images-grid.active {
+      max-height: 1000px;
+      opacity: 1;
+    }
+    .image-thumb {
+      cursor: pointer;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .image-thumb:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .image-thumb img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+    }
+    /* Lightbox Modal */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .lightbox-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+    }
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 80vh;
+      display: block;
+      border-radius: 8px;
+    }
+    .lightbox-title {
+      color: white;
+      text-align: center;
+      margin-top: 15px;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox-close:hover {
+      color: var(--accent);
     }
     /* WhatsApp flotante */
     .whatsapp-float {
       position: fixed;
-      width: 60px;
-      height: 60px;
+      width: 70px;
+      height: 70px;
       bottom: 30px;
       right: 30px;
-      background-color: #25d366;
+      background-color: var(--accent);
       color: white;
       border-radius: 50px;
       text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+      font-size: 28px;
+      box-shadow: 0 6px 20px rgba(37,211,102,0.6);
       z-index: 100;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1) rotate(10deg);
+      box-shadow: 0 8px 25px rgba(37,211,102,0.8);
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    }
+    /* Secciones adicionales */
+    .section-subtitle {
+      text-align: center;
+      color: var(--gray);
+      margin-bottom: 3rem;
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .client-logo {
+      height: 60px;
+      object-fit: contain;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    .client-logo:hover {
+      opacity: 1;
     }
     @media (max-width: 768px) {
       .contact {
         grid-template-columns: 1fr;
       }
       .hero h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
       }
       .navbar {
         flex-wrap: wrap;
+      }
+      .logo {
+        margin-bottom: 1rem;
+      }
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+      .map-container {
+        height: 300px;
+      }
+      .whatsapp-float {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+      }
+      .social-link {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+      }
+      .images-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       }
     }
   </style>
@@ -209,13 +526,15 @@
   <header>
     <nav class="navbar">
       <div class="logo">
-        <img src="logo" alt="HELM Technical Industrial Consulting">
-        </a>
+        <div class="logo-icon">HELM</div>
+        <a href="#inicio" class="logo-text" data-es="Technical Industrial Consulting" data-en="Technical Industrial Consulting"> Technical Industrial Consulting</a>
       </div>
       <div class="nav-links">
         <a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a>
         <a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
-        <a href="#nosotros" data-es="Sobre Nosotros" data-en="About Us">Sobre Nosotros</a>
+        <a href="#clientes" data-es="Clientes" data-en="Clients">Clientes</a>
+        <a href="#imagenes" data-es="Imágenes" data-en="Images">Imágenes</a>
+        <a href="#redes" data-es="Redes Sociales" data-en="Social Media">Redes</a>
         <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
         <button class="lang-toggle" id="langToggle">ES</button>
       </div>
@@ -225,9 +544,12 @@
   <!-- Hero -->
   <section class="hero" id="inicio">
     <h1 data-es="Asesoría Industrial Profesional" data-en="Professional Industrial Consulting">Asesoría Industrial Profesional</h1>
-    <p data-es="HELM ofrece soluciones técnicas especializadas para optimizar procesos, mejorar la eficiencia y garantizar la seguridad en entornos industriales." 
-       data-en="HELM provides specialized technical solutions to optimize processes, improve efficiency, and ensure safety in industrial environments.">
-      HELM ofrece soluciones técnicas especializadas para optimizar procesos, mejorar la eficiencia y garantizar la seguridad en entornos industriales.
+    <p data-es="HELM ofrece soluciones técnicas integrales diseñadas para optimizar los procesos industriales, mejorar la eficiencia operativa y garantizar los más altos estándares de seguridad.
+Nuestro enfoque combina experiencia técnica, innovación y compromiso con la calidad, permitiendo a las empresas alcanzar un desempeño sostenible, reducir costos operativos y maximizar la confiabilidad de sus sistemas y equipos en diversos sectores productivos." 
+       data-en="HELM provides comprehensive technical solutions designed to optimize industrial processes, enhance operational efficiency, and ensure the highest safety standards.
+Our approach combines technical expertise, innovation, and a strong commitment to quality, enabling companies to achieve sustainable performance, reduce operating costs, and maximize the reliability of their systems and equipment across various industrial sectors.">
+      HELM ofrece soluciones técnicas integrales diseñadas para optimizar los procesos industriales, mejorar la eficiencia operativa y garantizar los más altos estándares de seguridad.
+Nuestro enfoque combina experiencia técnica, innovación y compromiso con la calidad, permitiendo a las empresas alcanzar un desempeño sostenible, reducir costos operativos y maximizar la confiabilidad de sus sistemas y equipos en diversos sectores productivos..
     </p>
     <a href="#contacto" class="btn" data-es="Contáctanos" data-en="Contact Us">Contáctanos</a>
   </section>
@@ -237,6 +559,7 @@
     <h2 class="section-title" data-es="Nuestros Servicios" data-en="Our Services">Nuestros Servicios</h2>
     <div class="services-grid">
       <div class="service-card">
+        <i class="fas fa-cogs"></i>
         <h3 data-es="Optimización de Procesos" data-en="Process Optimization">Optimización de Procesos</h3>
         <p data-es="Mejoramos la eficiencia operativa mediante análisis técnico y reingeniería de procesos industriales." 
            data-en="We enhance operational efficiency through technical analysis and industrial process reengineering.">
@@ -244,6 +567,7 @@
         </p>
       </div>
       <div class="service-card">
+        <i class="fas fa-shield-alt"></i>
         <h3 data-es="Gestión de Seguridad Industrial" data-en="Industrial Safety Management">Gestión de Seguridad Industrial</h3>
         <p data-es="Implementamos sistemas de gestión de seguridad alineados con normas internacionales." 
            data-en="We implement safety management systems aligned with international standards.">
@@ -251,6 +575,7 @@
         </p>
       </div>
       <div class="service-card">
+        <i class="fas fa-search"></i>
         <h3 data-es="Auditorías Técnicas" data-en="Technical Audits">Auditorías Técnicas</h3>
         <p data-es="Evaluamos instalaciones, equipos y procedimientos para garantizar cumplimiento y eficiencia." 
            data-en="We assess facilities, equipment, and procedures to ensure compliance and efficiency.">
@@ -260,26 +585,95 @@
     </div>
   </section>
 
-  <!-- Sobre Nosotros -->
-  <section id="nosotros">
-    <h2 class="section-title" data-es="Sobre Nosotros" data-en="About Us">Sobre Nosotros</h2>
-    <div class="about-content">
-      <div>
-        <p data-es="HELM Technical Industrial Consulting es una firma especializada en brindar asesoría técnica de alto nivel a empresas del sector industrial. Nuestro equipo está compuesto por ingenieros y consultores con amplia experiencia en manufactura, energía, minería y logística." 
-           data-en="HELM Technical Industrial Consulting is a specialized firm providing high-level technical advisory services to industrial sector companies. Our team consists of engineers and consultants with extensive experience in manufacturing, energy, mining, and logistics.">
-          HELM Technical Industrial Consulting es una firma especializada en brindar asesoría técnica de alto nivel a empresas del sector industrial. Nuestro equipo está compuesto por ingenieros y consultores con amplia experiencia en manufactura, energía, minería y logística.
+  <!-- Clientes -->
+  <section id="clientes" style="background-color: var(--light);">
+    <h2 class="section-title" data-es="Nuestros Clientes" data-en="Our Clients">Nuestros Clientes</h2>
+    <p class="section-subtitle" data-es="Colaboramos con empresas líderes en diversos sectores industriales" data-en="We collaborate with leading companies across various industrial sectors">
+      Colaboramos con empresas líderes en diversos sectores industriales
+    </p>
+    <div class="clients-grid">
+      <div class="client-card">
+        <h3 data-es="Sector Energético" data-en="Energy Sector">Sector Energético</h3>
+        <p data-es="Proyectos de optimización en plantas de generación eléctrica y distribución energética." data-en="Optimization projects in power generation plants and energy distribution.">
+          Proyectos de optimización en plantas de generación eléctrica y distribución energética.
         </p>
-        <p data-es="Nos comprometemos con la excelencia, la innovación y la sostenibilidad en cada proyecto." 
-           data-en="We are committed to excellence, innovation, and sustainability in every project.">
-          Nos comprometemos con la excelencia, la innovación y la sostenibilidad en cada proyecto.
-        </p>
+        <img src="https://placehold.co/200x60/003366/ffffff?text=ENERGIA+EC" alt="Cliente Energía" class="client-logo">
       </div>
-      <div class="social-links">
-        <!-- Reemplaza los # con tus enlaces reales -->
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <div class="client-card">
+        <h3 data-es="Manufactura Pesada" data-en="Heavy Manufacturing">Manufactura Pesada</h3>
+        <p data-es="Implementación de sistemas de seguridad y eficiencia en fábricas de maquinaria industrial." data-en="Implementation of safety and efficiency systems in industrial machinery factories.">
+          Implementación de sistemas de seguridad y eficiencia en fábricas de maquinaria industrial.
+        </p>
+        <img src="https://placehold.co/200x60/007BFF/ffffff?text=MANUF+IND" alt="Cliente Manufactura" class="client-logo">
+      </div>
+      <div class="client-card">
+        <h3 data-es="Minería" data-en="Mining">Minería</h3>
+        <p data-es="Auditorías técnicas y consultoría en operaciones mineras a gran escala." data-en="Technical audits and consulting for large-scale mining operations.">
+          Auditorías técnicas y consultoría en operaciones mineras a gran escala.
+        </p>
+        <img src="https://placehold.co/200x60/25d366/ffffff?text=MINERA+EC" alt="Cliente Minería" class="client-logo">
+      </div>
+    </div>
+  </section>
+
+  <!-- Imágenes -->
+  <section id="imagenes" class="images-section">
+    <div class="images-container" style="max-width: 1400px; margin: 0 auto;">
+      <h2 class="section-title" data-es="Galería de Imágenes" data-en="Image Gallery">Galería de Imágenes</h2>
+      <div class="images-header">
+        <button class="toggle-images-btn" id="toggleImagesBtn">
+          <span data-es="Ver Imágenes" data-en="View Images">Ver Imágenes</span>
+        </button>
+      </div>
+      <div class="images-grid" id="imagesGrid">
+        <!-- Imagen 1 -->
+        <div class="image-thumb" data-title="Instalación Industrial">
+          <img src="https://placehold.co/400x300/003366/ffffff?text=INSTALACION+1" alt="Instalación Industrial 1">
+        </div>
+        <!-- Imagen 2 -->
+        <div class="image-thumb" data-title="Equipo de Seguridad">
+          <img src="https://placehold.co/400x300/007BFF/ffffff?text=EQUIPO+SEGURIDAD" alt="Equipo de Seguridad Industrial">
+        </div>
+        <!-- Imagen 3 -->
+        <div class="image-thumb" data-title="Auditoría Técnica">
+          <img src="https://placehold.co/400x300/25d366/ffffff?text=AUDITORIA" alt="Auditoría Técnica en Planta">
+        </div>
+        <!-- Imagen 4 -->
+        <div class="image-thumb" data-title="Optimización de Procesos">
+          <img src="https://placehold.co/400x300/6c757d/ffffff?text=OPTIMIZACION" alt="Optimización de Procesos Industriales">
+        </div>
+        <!-- Imagen 5 -->
+        <div class="image-thumb" data-title="Entrenamiento Técnico">
+          <img src="https://placehold.co/400x300/212529/ffffff?text=ENTRENAMIENTO" alt="Entrenamiento Técnico para Personal">
+        </div>
+        <!-- Imagen 6 -->
+        <div class="image-thumb" data-title="Proyecto Minero">
+          <img src="https://placehold.co/400x300/003366/ffffff?text=MINERIA" alt="Proyecto Minero Sostenible">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Redes Sociales -->
+  <section id="redes" class="social-section">
+    <div class="social-container">
+      <h2 class="social-title" data-es="Síguenos en Redes Sociales" data-en="Follow Us on Social Media">Síguenos en Redes Sociales</h2>
+      <div class="social-links-main">
+        <a href="https://linkedin.com" class="social-link linkedin" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://twitter.com" class="social-link twitter" target="_blank" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://instagram.com" class="social-link instagram" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://facebook.com" class="social-link facebook" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://youtube.com" class="social-link youtube" target="_blank" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
       </div>
     </div>
   </section>
@@ -288,11 +682,35 @@
   <section id="contacto">
     <h2 class="section-title" data-es="Contáctanos" data-en="Contact Us">Contáctanos</h2>
     <div class="contact">
-      <div>
-        <p><strong data-es="Teléfono:" data-en="Phone:">Teléfono:</strong> +593 0991951421</p>
-        <p><strong data-es="Email:" data-en="Email:">Email:</strong> gestion.integral.esho@gmail.com</p>
-        <p><strong data-es="Dirección:" data-en="Address:">Dirección:</strong> Villa Italia, Genova </p>
-        <a href="https://wa.me/5930991951421" class="btn" style="margin-top: 1rem;" target="_blank">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div>
+            <strong data-es="Teléfono:" data-en="Phone:">Teléfono:</strong>
+            <p>+593 0991951421</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div>
+            <strong data-es="Email:" data-en="Email:">Email:</strong>
+            <p>gestion.integral.esho@gmail.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div>
+            <strong data-es="Dirección:" data-en="Address:">Dirección:</strong>
+            <p>Villa Italia, Genova</p>
+          </div>
+        </div>
+        <a href="https://wa.me/5930991951421" class="btn btn-whatsapp" target="_blank">
           <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
       </div>
@@ -314,15 +732,25 @@
     <p>&copy; 2025 HELM Technical Industrial Consulting. Todos los derechos reservados.</p>
   </footer>
 
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose">&times;</button>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="">
+      <div class="lightbox-title" id="lightboxTitle"></div>
+    </div>
+  </div>
+
   <!-- WhatsApp flotante -->
   <a href="https://wa.me/5930991951421" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- Script de cambio de idioma -->
+  <!-- Script de cambio de idioma y funcionalidad de imágenes -->
   <script>
     let currentLang = 'es'; // idioma por defecto
 
+    // Cambio de idioma
     document.getElementById('langToggle').addEventListener('click', () => {
       currentLang = currentLang === 'es' ? 'en' : 'es';
       document.getElementById('langToggle').textContent = currentLang.toUpperCase();
@@ -333,7 +761,57 @@
         el.textContent = el.getAttribute(`data-${currentLang}`);
       });
     });
+
+    // Funcionalidad de imágenes
+    const toggleBtn = document.getElementById('toggleImagesBtn');
+    const imagesGrid = document.getElementById('imagesGrid');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    let imagesExpanded = false;
+
+    toggleBtn.addEventListener('click', () => {
+      imagesExpanded = !imagesExpanded;
+      imagesGrid.classList.toggle('active', imagesExpanded);
+      toggleBtn.innerHTML = imagesExpanded ? 
+        `<span data-es="Ocultar Imágenes" data-en="Hide Images">${currentLang === 'es' ? 'Ocultar Imágenes' : 'Hide Images'}</span>` :
+        `<span data-es="Ver Imágenes" data-en="View Images">${currentLang === 'es' ? 'Ver Imágenes' : 'View Images'}</span>`;
+    });
+
+    // Lightbox functionality
+    document.querySelectorAll('.image-thumb').forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        const imgSrc = thumb.querySelector('img').src;
+        const title = thumb.dataset.title || '';
+        lightboxImg.src = imgSrc;
+        lightboxImg.alt = thumb.querySelector('img').alt;
+        lightboxTitle.textContent = title;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Close lightbox
+    const closeLightbox = () => {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    };
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    // Close with ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
   </script>
 
 </body>
 </html>
+
