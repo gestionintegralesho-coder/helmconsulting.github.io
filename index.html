@@ -42,12 +42,18 @@
     }
     .logo {
       height: 50px;
-      /* Reemplaza con tu logo real: <img src="tu-logo.png" alt="HELM"> */
-      display: flex;
-      align-items: center;
-      font-weight: bold;
-      font-size: 1.4rem;
-      color: var(--primary);
+    }
+    .logo img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+    .logo a {
+      display: block;
+      height: 100%;
+    }
+    .logo a:hover {
+      opacity: 0.9;
     }
     .nav-links {
       display: flex;
@@ -203,8 +209,10 @@
   <header>
     <nav class="navbar">
       <div class="logo">
-  <img src="logo.png" alt="HELM Technical Industrial Consulting">
-</div>
+        <a href="https://wa.me/5930991951421" target="_blank" rel="noopener noreferrer">
+          <img src="Diseño V003.png" alt="HELM Technical Industrial Consulting">
+        </a>
+      </div>
       <div class="nav-links">
         <a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a>
         <a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
@@ -285,13 +293,11 @@
         <p><strong data-es="Teléfono:" data-en="Phone:">Teléfono:</strong> +593 0991951421</p>
         <p><strong data-es="Email:" data-en="Email:">Email:</strong> gestion.integral.esho@gmail.com</p>
         <p><strong data-es="Dirección:" data-en="Address:">Dirección:</strong> Villa Italia, Genova </p>
-        <!-- WhatsApp flotante también aparece abajo si prefieres -->
         <a href="https://wa.me/5930991951421" class="btn" style="margin-top: 1rem;" target="_blank">
           <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
       </div>
       <div class="map-container">
-        <!-- Reemplaza con tu ubicación real en Google Maps -->
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3789.9523674057004!2d-79.93172992527364!3d-2.060906997920602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMsKwMDMnMzkuMyJTIDc5wrA1NSc0NS4wIlc!5e1!3m2!1ses-419!2sec!4v1761376758480!5m2!1ses-419!2sec" 
           width="100%" 
