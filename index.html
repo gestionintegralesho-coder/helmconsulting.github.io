@@ -59,7 +59,6 @@
     }
     .logo img {
       height: 100px;
-      /* Ajusta el tamaño según tu logo */
       object-fit: contain;
     }
     .nav-links {
@@ -175,7 +174,7 @@
     /* Títulos de sección */
     .section-title {
       text-align: center;
-      margin-bottom: 3.5rem;
+      margin-bottom: 2.5rem;
       font-size: 2.5rem;
       color: var(--primary);
       position: relative;
@@ -183,11 +182,11 @@
     .section-title::after {
       content: '';
       position: absolute;
-      bottom: -15px;
+      bottom: -12px;
       left: 50%;
       transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
+      width: 70px;
+      height: 3px;
       background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       border-radius: 2px;
     }
@@ -223,40 +222,43 @@
       display: block;
     }
 
-    /* Contacto */
+    /* === Contacto - REDUCIDO === */
+    #contacto {
+      padding: 4rem 5% 3rem;
+    }
     .contact {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      gap: 2rem;
     }
     .contact-info {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1rem;
     }
     .contact-item {
       display: flex;
       align-items: flex-start;
-      gap: 15px;
+      gap: 12px;
     }
     .contact-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
       background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       color: white;
-      width: 45px;
-      height: 45px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      font-size: 18px;
     }
     .map-container {
-      height: 450px;
-      border-radius: 15px;
+      height: 380px;
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      border: 3px solid var(--light-gray);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      border: 2px solid var(--light-gray);
     }
 
     /* === BANNER DE CLIENTES (CAROUSEL) === */
@@ -356,7 +358,7 @@
       background: var(--dark);
       color: white;
       text-align: center;
-      padding: 2.5rem;
+      padding: 2rem;
     }
 
     /* WhatsApp flotante */
@@ -398,7 +400,7 @@
       .navbar { flex-wrap: wrap; }
       .logo { margin-bottom: 1rem; }
       .nav-links { flex-direction: column; align-items: center; gap: 1rem; }
-      .map-container { height: 300px; }
+      .map-container { height: 280px; }
       .whatsapp-float { width: 60px; height: 60px; font-size: 24px; }
       .social-link { width: 60px; height: 60px; font-size: 24px; }
       .clients-carousel { animation-duration: 30s; }
@@ -440,26 +442,26 @@
     <div class="services-grid">
       <div class="service-card">
         <i class="fas fa-cogs"></i>
-        <h3 data-es="Optimización de Procesos" data-en="Process Optimization">Optimización de Procesos</h3>
-        <p data-es="Mejoramos la eficiencia operativa mediante análisis técnico y reingeniería de procesos industriales." 
-           data-en="We enhance operational efficiency through technical analysis and industrial process reengineering.">
-          Mejoramos la eficiencia operativa mediante análisis técnico y reingeniería de procesos industriales.
+        <h3 data-es="Optimización de Procesos Industriales" data-en="Industrial Process Optimization">Optimización de Procesos Industriales</h3>
+        <p data-es="Identificamos cuellos de botella, ineficiencias y riesgos operativos en tus líneas de producción. Aplicamos metodologías avanzadas de ingeniería para reestructurar flujos de trabajo, reducir tiempos muertos y maximizar la productividad — sin comprometer la seguridad ni la calidad." 
+           data-en="We identify bottlenecks, inefficiencies, and operational risks in your production lines. Using advanced engineering methodologies, we restructure workflows to reduce downtime, boost productivity, and enhance output — all while maintaining safety and quality standards.">
+          Identificamos cuellos de botella, ineficiencias y riesgos operativos en tus líneas de producción. Aplicamos metodologías avanzadas de ingeniería para reestructurar flujos de trabajo, reducir tiempos muertos y maximizar la productividad — sin comprometer la seguridad ni la calidad.
         </p>
       </div>
       <div class="service-card">
         <i class="fas fa-shield-alt"></i>
-        <h3 data-es="Gestión de Seguridad Industrial" data-en="Industrial Safety Management">Gestión de Seguridad Industrial</h3>
-        <p data-es="Implementamos sistemas de gestión de seguridad alineados con normas internacionales." 
-           data-en="We implement safety management systems aligned with international standards.">
-          Implementamos sistemas de gestión de seguridad alineados con normas internacionales.
+        <h3 data-es="Gestión Integral de Seguridad Industrial" data-en="Comprehensive Industrial Safety Management">Gestión Integral de Seguridad Industrial</h3>
+        <p data-es="Diseñamos e implementamos sistemas de gestión de seguridad alineados con estándares internacionales (ISO 45001, OSHA, entre otros). Evaluamos riesgos, capacitamos a tu personal y establecemos protocolos proactivos para prevenir accidentes, proteger activos humanos y cumplir con la normativa vigente." 
+           data-en="We design and implement safety management systems aligned with international standards (ISO 45001, OSHA, etc.). From risk assessments to workforce training and proactive protocols, we help you prevent incidents, protect your people, and ensure full regulatory compliance.">
+          Diseñamos e implementamos sistemas de gestión de seguridad alineados con estándares internacionales (ISO 45001, OSHA, entre otros). Evaluamos riesgos, capacitamos a tu personal y establecemos protocolos proactivos para prevenir accidentes, proteger activos humanos y cumplir con la normativa vigente.
         </p>
       </div>
       <div class="service-card">
         <i class="fas fa-search"></i>
-        <h3 data-es="Auditorías Técnicas" data-en="Technical Audits">Auditorías Técnicas</h3>
-        <p data-es="Evaluamos instalaciones, equipos y procedimientos para garantizar cumplimiento y eficiencia." 
-           data-en="We assess facilities, equipment, and procedures to ensure compliance and efficiency.">
-          Evaluamos instalaciones, equipos y procedimientos para garantizar cumplimiento y eficiencia.
+        <h3 data-es="Auditorías Técnicas Especializadas" data-en="Specialized Technical Audits">Auditorías Técnicas Especializadas</h3>
+        <p data-es="Realizamos auditorías profundas de tus instalaciones, equipos, sistemas de control y procedimientos operativos. Nuestros informes incluyen hallazgos críticos, recomendaciones técnicas accionables y hojas de ruta para la mejora continua, asegurando confiabilidad, eficiencia energética y vida útil extendida de tus activos." 
+           data-en="We conduct in-depth audits of your facilities, equipment, control systems, and operational procedures. Our reports deliver critical findings, actionable technical recommendations, and clear roadmaps to enhance reliability, energy efficiency, and asset longevity.">
+          Realizamos auditorías profundas de tus instalaciones, equipos, sistemas de control y procedimientos operativos. Nuestros informes incluyen hallazgos críticos, recomendaciones técnicas accionables y hojas de ruta para la mejora continua, asegurando confiabilidad, eficiencia energética y vida útil extendida de tus activos.
         </p>
       </div>
     </div>
