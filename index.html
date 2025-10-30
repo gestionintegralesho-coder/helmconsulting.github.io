@@ -191,35 +191,74 @@
       border-radius: 2px;
     }
 
-    /* Servicios */
+    /* === SERVICIOS EN HORIZONTAL (4 columnas en escritorio) === */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.5rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
     }
+
     .service-card {
       background: white;
-      padding: 2.5rem;
-      border-radius: 15px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-      transition: all 0.4s ease;
+      padding: 2rem 1.8rem;
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       border: 1px solid var(--light-gray);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.6s forwards;
     }
+    .service-card:nth-child(1) { animation-delay: 0.1s; }
+    .service-card:nth-child(2) { animation-delay: 0.2s; }
+    .service-card:nth-child(3) { animation-delay: 0.3s; }
+    .service-card:nth-child(4) { animation-delay: 0.4s; }
+
     .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-      border-color: var(--secondary);
+      transform: translateY(-12px) rotate(0.5deg);
+      box-shadow: 0 20px 30px rgba(0, 51, 102, 0.15);
+      border-color: transparent;
+      background: linear-gradient(145deg, #ffffff, #f0f5ff);
     }
     .service-card h3 {
       color: var(--primary);
       margin-bottom: 1.2rem;
-      font-size: 1.4rem;
+      font-size: 1.35rem;
+      text-align: center;
+      transition: color 0.3s;
+    }
+    .service-card:hover h3 {
+      color: var(--secondary);
     }
     .service-card i {
       color: var(--secondary);
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
+      font-size: 2.4rem;
+      margin-bottom: 1.2rem;
       display: block;
+      text-align: center;
+      transition: transform 0.4s, color 0.3s;
+    }
+    .service-card:hover i {
+      color: var(--primary);
+      transform: scale(1.2) rotate(8deg);
+    }
+    .service-card p {
+      font-size: 0.98rem;
+      line-height: 1.65;
+      color: var(--gray);
+      text-align: center;
+      transition: color 0.3s;
+    }
+    .service-card:hover p {
+      color: var(--dark);
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* === Contacto - REDUCIDO === */
@@ -392,8 +431,18 @@
       100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
     }
 
-    /* Responsive */
+    /* Responsive: en móviles, 1 columna */
+    @media (max-width: 992px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+    }
+
     @media (max-width: 768px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
       .contact { grid-template-columns: 1fr; }
       .hero h1 { font-size: 2.2rem; }
       .hero p { font-size: 1.1rem; }
@@ -405,6 +454,9 @@
       .social-link { width: 60px; height: 60px; font-size: 24px; }
       .clients-carousel { animation-duration: 30s; }
       .client-logo-item { margin: 0 15px; }
+      .service-card {
+        padding: 1.8rem;
+      }
     }
   </style>
 </head>
@@ -464,7 +516,6 @@
           Realizamos auditorías profundas de tus instalaciones, equipos, sistemas de control y procedimientos operativos. Nuestros informes incluyen hallazgos críticos, recomendaciones técnicas accionables y hojas de ruta para la mejora continua, asegurando confiabilidad, eficiencia energética y vida útil extendida de tus activos.
         </p>
       </div>
-      <!-- NUEVO SERVICIO -->
       <div class="service-card">
         <i class="fas fa-heartbeat"></i>
         <h3 data-es="Higiene y Salud Ocupacional" data-en="Occupational Hygiene and Health">Higiene y Salud Ocupacional</h3>
@@ -590,7 +641,6 @@
       'redsis.png',
       'setegsa.png',
       'cooperativa.png'
-      // Agrega más nombres de archivos aquí, ej: 'empresaX.png'
     ];
 
     const carousel = document.getElementById('clientsCarousel');
@@ -610,7 +660,6 @@
       carousel.appendChild(createLogoItem(filename));
     });
 
-    // Duplicar para efecto continuo
     clientLogos.forEach(filename => {
       carousel.appendChild(createLogoItem(filename));
     });
