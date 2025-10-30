@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <title>HELM Technical Industrial Consulting</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
@@ -29,6 +29,7 @@
       color: var(--dark);
       line-height: 1.6;
       font-family: 'Open Sans', sans-serif;
+      padding-bottom: 0;
     }
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Montserrat', sans-serif;
@@ -60,6 +61,7 @@
     .logo img {
       height: 100px;
       object-fit: contain;
+      loading: lazy;
     }
     .nav-links {
       display: flex;
@@ -72,6 +74,7 @@
       font-size: 16px;
       transition: color 0.3s, transform 0.2s;
       position: relative;
+      touch-action: manipulation;
     }
     .nav-links a:hover {
       color: var(--secondary);
@@ -100,6 +103,7 @@
       cursor: pointer;
       transition: transform 0.3s, box-shadow 0.3s;
       font-size: 14px;
+      touch-action: manipulation;
     }
     .lang-toggle:hover {
       transform: translateY(-2px);
@@ -154,6 +158,7 @@
       transition: all 0.3s ease;
       box-shadow: 0 6px 20px rgba(0,0,0,0.2);
       border: 2px solid transparent;
+      touch-action: manipulation;
     }
     .btn:hover {
       transform: translateY(-5px);
@@ -335,6 +340,7 @@
       object-fit: contain;
       filter: grayscale(100%);
       transition: filter 0.3s;
+      loading: lazy;
     }
     .client-logo-item:hover img {
       filter: grayscale(0%);
@@ -379,6 +385,7 @@
       font-size: 28px;
       box-shadow: 0 6px 15px rgba(0,0,0,0.1);
       border: 2px solid transparent;
+      touch-action: manipulation;
     }
     .social-link:hover {
       transform: translateY(-5px) scale(1.1);
@@ -420,6 +427,7 @@
       text-decoration: none;
       transition: all 0.3s ease;
       animation: pulse 2s infinite;
+      touch-action: manipulation;
     }
     .whatsapp-float:hover {
       transform: scale(1.1) rotate(10deg);
@@ -431,7 +439,7 @@
       100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
     }
 
-    /* Responsive: en móviles, 1 columna */
+    /* Responsive */
     @media (max-width: 992px) {
       .services-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -440,6 +448,12 @@
     }
 
     @media (max-width: 768px) {
+      body {
+        padding-bottom: 90px;
+      }
+      .logo img {
+        height: 70px;
+      }
       .services-grid {
         grid-template-columns: 1fr;
       }
@@ -466,7 +480,7 @@
   <header>
     <nav class="navbar">
       <div class="logo">
-        <img src="img/logo.png" alt="HELM Technical Industrial Consulting">
+        <img src="img/logo.png" alt="HELM Technical Industrial Consulting" loading="lazy">
       </div>
       <div class="nav-links">
         <a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a>
@@ -656,11 +670,8 @@
       return item;
     }
 
-    clientLogos.forEach(filename => {
-      carousel.appendChild(createLogoItem(filename));
-    });
-
-    clientLogos.forEach(filename => {
+    // Duplicamos para efecto de bucle infinito
+    [...clientLogos, ...clientLogos].forEach(filename => {
       carousel.appendChild(createLogoItem(filename));
     });
   </script>
