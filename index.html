@@ -464,6 +464,15 @@
           Realizamos auditorías profundas de tus instalaciones, equipos, sistemas de control y procedimientos operativos. Nuestros informes incluyen hallazgos críticos, recomendaciones técnicas accionables y hojas de ruta para la mejora continua, asegurando confiabilidad, eficiencia energética y vida útil extendida de tus activos.
         </p>
       </div>
+      <!-- NUEVO SERVICIO -->
+      <div class="service-card">
+        <i class="fas fa-heartbeat"></i>
+        <h3 data-es="Higiene y Salud Ocupacional" data-en="Occupational Hygiene and Health">Higiene y Salud Ocupacional</h3>
+        <p data-es="Implementamos programas integrales de salud ocupacional basados en evaluaciones de riesgos físicos, químicos, biológicos y ergonómicos. Monitoreamos condiciones ambientales de trabajo, promovemos la vigilancia médica y diseñamos estrategias para prevenir enfermedades laborales, garantizando un entorno seguro, saludable y conforme a la normativa local e internacional." 
+           data-en="We implement comprehensive occupational health programs based on assessments of physical, chemical, biological, and ergonomic hazards. We monitor workplace environmental conditions, support medical surveillance, and design strategies to prevent occupational illnesses, ensuring a safe, healthy, and compliant working environment.">
+          Implementamos programas integrales de salud ocupacional basados en evaluaciones de riesgos físicos, químicos, biológicos y ergonómicos. Monitoreamos condiciones ambientales de trabajo, promovemos la vigilancia médica y diseñamos estrategias para prevenir enfermedades laborales, garantizando un entorno seguro, saludable y conforme a la normativa local e internacional.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -575,13 +584,12 @@
 
   <!-- Script para cargar logos de clientes dinámicamente -->
   <script>
-    // 👇 EDITA ESTA LISTA para agregar o quitar logos
     const clientLogos = [
       'inti.png',
       'securitycom.png',
       'redsis.png',
       'setegsa.png',
-	  'cooperativa.png'
+      'cooperativa.png'
       // Agrega más nombres de archivos aquí, ej: 'empresaX.png'
     ];
 
@@ -598,12 +606,11 @@
       return item;
     }
 
-    // Añadir logos originales
     clientLogos.forEach(filename => {
       carousel.appendChild(createLogoItem(filename));
     });
 
-    // Duplicar para efecto de carrusel continuo
+    // Duplicar para efecto continuo
     clientLogos.forEach(filename => {
       carousel.appendChild(createLogoItem(filename));
     });
