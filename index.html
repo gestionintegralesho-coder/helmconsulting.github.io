@@ -467,41 +467,11 @@
     </div>
   </section>
 
-  <!-- BANNER DE CLIENTES -->
+  <!-- BANNER DE CLIENTES (DINÁMICO) -->
   <div class="clients-banner">
     <h2 data-es="Empresas que confían en HELM" data-en="Companies that trust HELM">Empresas que confían en HELM</h2>
-    <div class="clients-carousel">
-      <div class="client-logo-item">
-        <img src="img/Logo.inti.png" alt="Inti Network">
-      </div>
-      <div class="client-logo-item">
-        <img src="https://placehold.co/200x60/007BFF/ffffff?text=MANUF+IND" alt="Cliente de manufactura pesada">
-      </div>
-      <div class="client-logo-item">
-        <img src="https://placehold.co/200x60/25d366/ffffff?text=MINERA+EC" alt="Cliente del sector minero">
-      </div>
-      <div class="client-logo-item">
-        <img src="https://placehold.co/200x60/6c757d/ffffff?text=LOGISTICA" alt="Cliente de logística industrial">
-      </div>
-      <div class="client-logo-item">
-        <img src="https://placehold.co/200x60/212529/ffffff?text=QUIMICA" alt="Cliente del sector químico">
-      </div>
-      <!-- Repetición para efecto continuo -->
-      <div class="client-logo-item">
-        <img src="img/Logo.inti" alt="Inti Network">
-      </div>
-      <div class="client-logo-item">
-        <img src="https://placehold.co/200x60/007BFF/ffffff?text=MANUF+IND" alt="Cliente de manufactura pesada">
-      </div>
-      <div class="client-logo-item">
-        <img src="https://placehold.co/200x60/25d366/ffffff?text=MINERA+EC" alt="Cliente del sector minero">
-      </div>
-      <div class="client-logo-item">
-        <img src="https://placehold.co/200x60/6c757d/ffffff?text=LOGISTICA" alt="Cliente de logística industrial">
-      </div>
-      <div class="client-logo-item">
-        <img src="https://placehold.co/200x60/212529/ffffff?text=QUIMICA" alt="Cliente del sector químico">
-      </div>
+    <div class="clients-carousel" id="clientsCarousel">
+      <!-- Los logos se insertarán aquí con JavaScript -->
     </div>
   </div>
 
@@ -600,6 +570,41 @@
       document.querySelectorAll('[data-es]').forEach(el => {
         el.textContent = el.getAttribute(`data-${currentLang}`);
       });
+    });
+  </script>
+
+  <!-- Script para cargar logos de clientes dinámicamente -->
+  <script>
+    // 👇 EDITA ESTA LISTA para agregar o quitar logos
+    const clientLogos = [
+      'inti.png',
+      'cliente1.png',
+      'cliente2.jpg',
+      'cliente3.svg'
+      // Agrega más nombres de archivos aquí, ej: 'empresaX.png'
+    ];
+
+    const carousel = document.getElementById('clientsCarousel');
+
+    function createLogoItem(filename) {
+      const item = document.createElement('div');
+      item.className = 'client-logo-item';
+      const img = document.createElement('img');
+      img.src = `img/clientes/${filename}`;
+      img.alt = 'Cliente de HELM';
+      img.loading = 'lazy';
+      item.appendChild(img);
+      return item;
+    }
+
+    // Añadir logos originales
+    clientLogos.forEach(filename => {
+      carousel.appendChild(createLogoItem(filename));
+    });
+
+    // Duplicar para efecto de carrusel continuo
+    clientLogos.forEach(filename => {
+      carousel.appendChild(createLogoItem(filename));
     });
   </script>
 
