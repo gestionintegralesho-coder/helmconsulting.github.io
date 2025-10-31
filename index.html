@@ -266,6 +266,75 @@
       }
     }
 
+    /* === Historia de la Empresa === */
+    #historia {
+      padding: 5rem 5% 4rem;
+    }
+    .history-content {
+      display: flex;
+      gap: 3rem;
+      align-items: flex-start;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .history-text {
+      flex: 2;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--dark);
+    }
+    .history-text p {
+      margin-bottom: 2rem;
+    }
+    .history-values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      margin-top: 2rem;
+    }
+    .value-item h3 {
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+      font-size: 1.25rem;
+    }
+    .value-item p {
+      font-size: 0.95rem;
+      color: var(--gray);
+      margin-bottom: 0;
+    }
+    .history-images {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+    .history-logo img,
+    .history-founder img {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      object-fit: contain;
+    }
+    .history-founder img {
+      border-radius: 50%;
+      max-width: 180px;
+    }
+    .history-founder p {
+      text-align: center;
+      margin-top: 1rem;
+      font-weight: 600;
+      color: var(--dark);
+      font-size: 1.1rem;
+    }
+    .history-founder p em {
+      color: var(--gray);
+      font-weight: 400;
+      font-style: normal;
+      display: block;
+    }
+
     /* === Contacto - REDUCIDO === */
     #contacto {
       padding: 4rem 5% 3rem;
@@ -445,6 +514,9 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
       }
+      .history-values {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 768px) {
@@ -471,6 +543,28 @@
       .service-card {
         padding: 1.8rem;
       }
+
+      /* Historia responsive */
+      .history-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .history-images {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .history-logo,
+      .history-founder {
+        text-align: center;
+      }
+      .history-values {
+        grid-template-columns: 1fr;
+      }
+      .history-text p,
+      .value-item p {
+        text-align: left;
+      }
     }
   </style>
 </head>
@@ -484,6 +578,7 @@
       </div>
       <div class="nav-links">
         <a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a>
+        <a href="#historia" data-es="Historia" data-en="Our Story">Historia</a>
         <a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
         <a href="#redes" data-es="Redes Sociales" data-en="Social Media">Redes</a>
         <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
@@ -500,6 +595,57 @@
       HELM ofrece soluciones técnicas integrales diseñadas para optimizar los procesos industriales, mejorar la eficiencia operativa y garantizar los más altos estándares de seguridad. Nuestro enfoque combina experiencia técnica, innovación y compromiso con la calidad, permitiendo a las empresas alcanzar un desempeño sostenible, reducir costos operativos y maximizar la confiabilidad de sus sistemas y equipos en diversos sectores productivos.
     </p>
     <a href="#contacto" class="btn" data-es="Contáctanos" data-en="Contact Us">Contáctanos</a>
+  </section>
+
+  <!-- Historia de la Empresa -->
+  <section id="historia">
+    <h2 class="section-title" data-es="Nuestra Historia" data-en="Our Story">Nuestra Historia</h2>
+    <div class="history-content">
+      <div class="history-text">
+        <p data-es="HELM Technical Industrial Consulting nació en 2020 con la visión de transformar la industria ecuatoriana mediante soluciones técnicas innovadoras, seguras y sostenibles. Fundada por el ingeniero Héctor Luzardo Mota, HELM se ha consolidado como un aliado estratégico para empresas que buscan optimizar sus procesos, garantizar la seguridad de sus operarios y cumplir con los más altos estándares internacionales."
+           data-en="HELM Technical Industrial Consulting was founded in 2020 with the vision of transforming Ecuador’s industrial sector through innovative, safe, and sustainable technical solutions. Founded by engineer Héctor Luzardo Mota, HELM has become a strategic partner for companies seeking to optimize operations, ensure worker safety, and meet the highest international standards.">
+          HELM Technical Industrial Consulting nació en 2020 con la visión de transformar la industria ecuatoriana mediante soluciones técnicas innovadoras, seguras y sostenibles. Fundada por el ing Héctor Luzardo Mota, HELM se ha consolidado como un aliado estratégico para empresas que buscan optimizar sus procesos, garantizar la seguridad de sus operarios y cumplir con los más altos estándares internacionales.
+        </p>
+
+        <div class="history-values">
+          <div class="value-item">
+            <h3 data-es="Objetivo" data-en="Objective">Objetivo</h3>
+            <p data-es="Brindar asesoría técnica especializada que impulse la eficiencia, seguridad y sostenibilidad en el sector industrial." 
+               data-en="Provide specialized technical consulting that drives efficiency, safety, and sustainability in the industrial sector.">
+              Brindar asesoría técnica especializada que impulse la eficiencia, seguridad y sostenibilidad en el sector industrial.
+            </p>
+          </div>
+          <div class="value-item">
+            <h3 data-es="Meta" data-en="Goal">Meta</h3>
+            <p data-es="Convertirnos en referentes en Latinoamérica en consultoría industrial con enfoque humano y tecnológico." 
+               data-en="Become a leading reference in Latin America for industrial consulting with a human and technological approach.">
+              Convertirnos en referentes en Latinoamérica en consultoría industrial con enfoque humano y tecnológico.
+            </p>
+          </div>
+          <div class="value-item">
+            <h3 data-es="Valores" data-en="Values">Valores</h3>
+            <p data-es="<strong>Integridad:</strong> Actuamos con transparencia y ética profesional.<br><strong>Innovación:</strong> Buscamos soluciones creativas y adaptadas a cada cliente.<br><strong>Compromiso:</strong> Nos involucramos con la seguridad y el éxito de nuestros socios." 
+               data-en="<strong>Integrity:</strong> We act with transparency and professional ethics.<br><strong>Innovation:</strong> We seek creative, client-tailored solutions.<br><strong>Commitment:</strong> We are deeply invested in our partners’ safety and success.">
+              <strong>Integridad:</strong> Actuamos con transparencia y ética profesional.<br>
+              <strong>Innovación:</strong> Buscamos soluciones creativas y adaptadas a cada cliente.<br>
+              <strong>Compromiso:</strong> Nos involucramos con la seguridad y el éxito de nuestros socios.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="history-images">
+        <div class="history-logo">
+          <img src="img/logo.png" alt="Logo de HELM" loading="lazy">
+        </div>
+        <div class="history-founder">
+          <img src="img/fundador.jpg" alt="Héctor Luzardo Mota, Fundador de HELM" loading="lazy">
+          <p data-es="Ing. Héctor Luzardo Mota<br><em>Director General</em>" 
+             data-en="Eng. Héctor Luzardo Mota<br><em>Managing Director</em>">
+            Ing. Héctor Luzardo Mota<br><em>Director General</em>
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Servicios -->
@@ -642,7 +788,7 @@
       document.documentElement.lang = currentLang;
 
       document.querySelectorAll('[data-es]').forEach(el => {
-        el.textContent = el.getAttribute(`data-${currentLang}`);
+        el.innerHTML = el.getAttribute(`data-${currentLang}`);
       });
     });
   </script>
