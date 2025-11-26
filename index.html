@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>HELM Technical Industrial Consulting</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --primary: #003366;
@@ -16,14 +19,17 @@
       --gray: #6c757d;
       --light-gray: #e9ecef;
     }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     html {
       scroll-behavior: smooth;
     }
+
     body {
       background-color: #fff;
       color: var(--dark);
@@ -31,7 +37,13 @@
       font-family: 'Open Sans', sans-serif;
       padding-bottom: 0;
     }
-    h1, h2, h3, h4, h5, h6 {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
     }
@@ -39,12 +51,13 @@
     /* === Header & Navbar === */
     header {
       background-color: white;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
       position: fixed;
       width: 100%;
       top: 0;
       z-index: 1000;
     }
+
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -53,20 +66,24 @@
       max-width: 1400px;
       margin: 0 auto;
     }
+
     .logo {
       display: flex;
       align-items: center;
       gap: 12px;
     }
+
     .logo img {
       height: 100px;
       object-fit: contain;
       loading: lazy;
     }
+
     .nav-links {
       display: flex;
       gap: 1.5rem;
     }
+
     .nav-links a {
       text-decoration: none;
       color: var(--dark);
@@ -76,10 +93,12 @@
       position: relative;
       touch-action: manipulation;
     }
+
     .nav-links a:hover {
       color: var(--secondary);
       transform: translateY(-2px);
     }
+
     .nav-links a::after {
       content: '';
       position: absolute;
@@ -90,9 +109,11 @@
       background: var(--secondary);
       transition: width 0.3s ease;
     }
+
     .nav-links a:hover::after {
       width: 100%;
     }
+
     .lang-toggle {
       background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       border: none;
@@ -105,9 +126,10 @@
       font-size: 14px;
       touch-action: manipulation;
     }
+
     .lang-toggle:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,123,255,0.4);
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
     }
 
     /* === Secciones === */
@@ -116,6 +138,7 @@
       max-width: 1400px;
       margin: 0 auto;
     }
+
     .hero {
       background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       color: white;
@@ -124,20 +147,36 @@
       position: relative;
       overflow: hidden;
     }
+
     .hero::before,
     .hero::after {
       content: '';
       position: absolute;
       border-radius: 50%;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.1);
     }
-    .hero::before { top: -50px; right: -50px; width: 200px; height: 200px; }
-    .hero::after { bottom: -80px; left: -80px; width: 300px; height: 300px; background: rgba(255,255,255,0.08); }
+
+    .hero::before {
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+    }
+
+    .hero::after {
+      bottom: -80px;
+      left: -80px;
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
     .hero h1 {
       font-size: 3.2rem;
       margin-bottom: 1.5rem;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
+
     .hero p {
       font-size: 1.3rem;
       max-width: 800px;
@@ -156,21 +195,24 @@
       font-weight: 700;
       font-size: 18px;
       transition: all 0.3s ease;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
       border: 2px solid transparent;
       touch-action: manipulation;
     }
+
     .btn:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
       background: var(--primary);
       color: white;
     }
+
     .btn-whatsapp {
       background: var(--accent);
       color: white;
-      box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
     }
+
     .btn-whatsapp:hover {
       background: #128c7e;
       color: white;
@@ -184,6 +226,7 @@
       color: var(--primary);
       position: relative;
     }
+
     .section-title::after {
       content: '';
       position: absolute;
@@ -208,17 +251,29 @@
       background: white;
       padding: 2rem 1.8rem;
       border-radius: 18px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
       transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       border: 1px solid var(--light-gray);
       opacity: 0;
       transform: translateY(30px);
       animation: fadeInUp 0.6s forwards;
     }
-    .service-card:nth-child(1) { animation-delay: 0.1s; }
-    .service-card:nth-child(2) { animation-delay: 0.2s; }
-    .service-card:nth-child(3) { animation-delay: 0.3s; }
-    .service-card:nth-child(4) { animation-delay: 0.4s; }
+
+    .service-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .service-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .service-card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .service-card:nth-child(4) {
+      animation-delay: 0.4s;
+    }
 
     .service-card:hover {
       transform: translateY(-12px) rotate(0.5deg);
@@ -226,6 +281,7 @@
       border-color: transparent;
       background: linear-gradient(145deg, #ffffff, #f0f5ff);
     }
+
     .service-card h3 {
       color: var(--primary);
       margin-bottom: 1.2rem;
@@ -233,9 +289,11 @@
       text-align: center;
       transition: color 0.3s;
     }
+
     .service-card:hover h3 {
       color: var(--secondary);
     }
+
     .service-card i {
       color: var(--secondary);
       font-size: 2.4rem;
@@ -244,10 +302,12 @@
       text-align: center;
       transition: transform 0.4s, color 0.3s;
     }
+
     .service-card:hover i {
       color: var(--primary);
       transform: scale(1.2) rotate(8deg);
     }
+
     .service-card p {
       font-size: 0.98rem;
       line-height: 1.65;
@@ -255,6 +315,7 @@
       text-align: center;
       transition: color 0.3s;
     }
+
     .service-card:hover p {
       color: var(--dark);
     }
@@ -270,6 +331,7 @@
     #historia {
       padding: 5rem 5% 4rem;
     }
+
     .history-content {
       display: flex;
       gap: 3rem;
@@ -277,31 +339,37 @@
       max-width: 1400px;
       margin: 0 auto;
     }
+
     .history-text {
       flex: 2;
       font-size: 1.05rem;
       line-height: 1.7;
       color: var(--dark);
     }
+
     .history-text p {
       margin-bottom: 2rem;
     }
+
     .history-values {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.8rem;
       margin-top: 2rem;
     }
+
     .value-item h3 {
       color: var(--primary);
       margin-bottom: 0.8rem;
       font-size: 1.25rem;
     }
+
     .value-item p {
       font-size: 0.95rem;
       color: var(--gray);
       margin-bottom: 0;
     }
+
     .history-images {
       flex: 1;
       display: flex;
@@ -309,18 +377,21 @@
       gap: 2rem;
       align-items: center;
     }
+
     .history-logo img,
     .history-founder img {
       width: 100%;
       max-width: 220px;
       border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
       object-fit: contain;
     }
+
     .history-founder img {
       border-radius: 50%;
       max-width: 180px;
     }
+
     .history-founder p {
       text-align: center;
       margin-top: 1rem;
@@ -328,6 +399,7 @@
       color: var(--dark);
       font-size: 1.1rem;
     }
+
     .history-founder p em {
       color: var(--gray);
       font-weight: 400;
@@ -339,21 +411,25 @@
     #contacto {
       padding: 4rem 5% 3rem;
     }
+
     .contact {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
     }
+
     .contact-info {
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
+
     .contact-item {
       display: flex;
       align-items: flex-start;
       gap: 12px;
     }
+
     .contact-icon {
       width: 40px;
       height: 40px;
@@ -366,11 +442,12 @@
       justify-content: center;
       flex-shrink: 0;
     }
+
     .map-container {
       height: 380px;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
       border: 2px solid var(--light-gray);
     }
 
@@ -380,19 +457,23 @@
       padding: 3rem 0;
       overflow: hidden;
     }
+
     .clients-banner h2 {
       text-align: center;
       margin-bottom: 2rem;
       color: var(--primary);
     }
+
     .clients-carousel {
       display: flex;
       animation: scrollClients 20s linear infinite;
       width: max-content;
     }
+
     .clients-carousel:hover {
       animation-play-state: paused;
     }
+
     .client-logo-item {
       height: 100px;
       margin: 0 60px;
@@ -401,9 +482,11 @@
       opacity: 0.7;
       transition: opacity 0.3s;
     }
+
     .client-logo-item:hover {
       opacity: 1;
     }
+
     .client-logo-item img {
       height: 100%;
       object-fit: contain;
@@ -411,12 +494,19 @@
       transition: filter 0.3s;
       loading: lazy;
     }
+
     .client-logo-item:hover img {
       filter: grayscale(0%);
     }
+
     @keyframes scrollClients {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
     /* Redes sociales */
@@ -424,22 +514,26 @@
       background-color: var(--light);
       padding: 4rem 5%;
     }
+
     .social-container {
       max-width: 1400px;
       margin: 0 auto;
       text-align: center;
     }
+
     .social-title {
       font-size: 2.2rem;
       color: var(--primary);
       margin-bottom: 2rem;
     }
+
     .social-links-main {
       display: flex;
       justify-content: center;
       gap: 1.5rem;
       flex-wrap: wrap;
     }
+
     .social-link {
       display: flex;
       align-items: center;
@@ -452,21 +546,37 @@
       text-decoration: none;
       transition: all 0.3s ease;
       font-size: 28px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
       border: 2px solid transparent;
       touch-action: manipulation;
     }
+
     .social-link:hover {
       transform: translateY(-5px) scale(1.1);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
       border-color: var(--secondary);
       color: var(--secondary);
     }
-    .social-link.linkedin:hover { color: #0A66C2; }
-    .social-link.X:hover { color: #1DA1F2; }
-    .social-link.instagram:hover { color: #E1306C; }
-    .social-link.facebook:hover { color: #1877F2; }
-    .social-link.youtube:hover { color: #FF0000; }
+
+    .social-link.linkedin:hover {
+      color: #0A66C2;
+    }
+
+    .social-link.X:hover {
+      color: #1DA1F2;
+    }
+
+    .social-link.instagram:hover {
+      color: #E1306C;
+    }
+
+    .social-link.facebook:hover {
+      color: #1877F2;
+    }
+
+    .social-link.youtube:hover {
+      color: #FF0000;
+    }
 
     /* Footer */
     footer {
@@ -488,7 +598,7 @@
       border-radius: 50px;
       text-align: center;
       font-size: 28px;
-      box-shadow: 0 6px 20px rgba(37,211,102,0.6);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
       z-index: 100;
       display: flex;
       align-items: center;
@@ -498,14 +608,24 @@
       animation: pulse 2s infinite;
       touch-action: manipulation;
     }
+
     .whatsapp-float:hover {
       transform: scale(1.1) rotate(10deg);
-      box-shadow: 0 8px 25px rgba(37,211,102,0.8);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.8);
     }
+
     @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
-      70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
-      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
     }
 
     /* Responsive */
@@ -514,6 +634,7 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
       }
+
       .history-values {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -523,23 +644,65 @@
       body {
         padding-bottom: 90px;
       }
+
       .logo img {
         height: 70px;
       }
+
       .services-grid {
         grid-template-columns: 1fr;
       }
-      .contact { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 2.2rem; }
-      .hero p { font-size: 1.1rem; }
-      .navbar { flex-wrap: wrap; }
-      .logo { margin-bottom: 1rem; }
-      .nav-links { flex-direction: column; align-items: center; gap: 1rem; }
-      .map-container { height: 280px; }
-      .whatsapp-float { width: 60px; height: 60px; font-size: 24px; }
-      .social-link { width: 60px; height: 60px; font-size: 24px; }
-      .clients-carousel { animation-duration: 30s; }
-      .client-logo-item { margin: 0 15px; }
+
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .navbar {
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        margin-bottom: 1rem;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .map-container {
+        height: 280px;
+      }
+
+      .whatsapp-float {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+      }
+
+      .social-link {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+      }
+
+      .clients-carousel {
+        animation-duration: 30s;
+      }
+
+      .client-logo-item {
+        margin: 0 15px;
+      }
+
       .service-card {
         padding: 1.8rem;
       }
@@ -549,18 +712,22 @@
         flex-direction: column;
         text-align: center;
       }
+
       .history-images {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
       }
+
       .history-logo,
       .history-founder {
         text-align: center;
       }
+
       .history-values {
         grid-template-columns: 1fr;
       }
+
       .history-text p,
       .value-item p {
         text-align: left;
@@ -568,6 +735,16 @@
     }
   </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F98YHHYKK6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-F98YHHYKK6');
+</script>
+
 <body>
 
   <!-- Header -->
@@ -589,10 +766,14 @@
 
   <!-- Hero -->
   <section class="hero" id="inicio">
-    <h1 data-es="Asesoría Industrial Profesional" data-en="Professional Industrial Consulting">Asesoría Industrial Profesional</h1>
-    <p data-es="HELM ofrece soluciones técnicas integrales diseñadas para optimizar los procesos industriales, mejorar la eficiencia operativa y garantizar los más altos estándares de seguridad. Nuestro enfoque combina experiencia técnica, innovación y compromiso con la calidad, permitiendo a las empresas alcanzar un desempeño sostenible, reducir costos operativos y maximizar la confiabilidad de sus sistemas y equipos en diversos sectores productivos." 
-       data-en="HELM provides comprehensive technical solutions designed to optimize industrial processes, enhance operational efficiency, and ensure the highest safety standards. Our approach combines technical expertise, innovation, and a strong commitment to quality, enabling companies to achieve sustainable performance, reduce operating costs, and maximize the reliability of their systems and equipment across various industrial sectors.">
-      HELM ofrece soluciones técnicas integrales diseñadas para optimizar los procesos industriales, mejorar la eficiencia operativa y garantizar los más altos estándares de seguridad. Nuestro enfoque combina experiencia técnica, innovación y compromiso con la calidad, permitiendo a las empresas alcanzar un desempeño sostenible, reducir costos operativos y maximizar la confiabilidad de sus sistemas y equipos en diversos sectores productivos.
+    <h1 data-es="Asesoría Industrial Profesional" data-en="Professional Industrial Consulting">Asesoría Industrial
+      Profesional</h1>
+    <p data-es="HELM ofrece soluciones técnicas integrales diseñadas para optimizar los procesos industriales, mejorar la eficiencia operativa y garantizar los más altos estándares de seguridad. Nuestro enfoque combina experiencia técnica, innovación y compromiso con la calidad, permitiendo a las empresas alcanzar un desempeño sostenible, reducir costos operativos y maximizar la confiabilidad de sus sistemas y equipos en diversos sectores productivos."
+      data-en="HELM provides comprehensive technical solutions designed to optimize industrial processes, enhance operational efficiency, and ensure the highest safety standards. Our approach combines technical expertise, innovation, and a strong commitment to quality, enabling companies to achieve sustainable performance, reduce operating costs, and maximize the reliability of their systems and equipment across various industrial sectors.">
+      HELM ofrece soluciones técnicas integrales diseñadas para optimizar los procesos industriales, mejorar la
+      eficiencia operativa y garantizar los más altos estándares de seguridad. Nuestro enfoque combina experiencia
+      técnica, innovación y compromiso con la calidad, permitiendo a las empresas alcanzar un desempeño sostenible,
+      reducir costos operativos y maximizar la confiabilidad de sus sistemas y equipos en diversos sectores productivos.
     </p>
     <a href="#contacto" class="btn" data-es="Contáctanos" data-en="Contact Us">Contáctanos</a>
   </section>
@@ -603,29 +784,33 @@
     <div class="history-content">
       <div class="history-text">
         <p data-es="HELM Technical Industrial Consulting nació en 2020 con la visión de transformar la industria ecuatoriana mediante soluciones técnicas innovadoras, seguras y sostenibles. Fundada por el ingeniero Héctor Luzardo Mota, HELM se ha consolidado como un aliado estratégico para empresas que buscan optimizar sus procesos, garantizar la seguridad de sus operarios y cumplir con los más altos estándares internacionales."
-           data-en="HELM Technical Industrial Consulting was founded in 2020 with the vision of transforming Ecuador’s industrial sector through innovative, safe, and sustainable technical solutions. Founded by engineer Héctor Luzardo Mota, HELM has become a strategic partner for companies seeking to optimize operations, ensure worker safety, and meet the highest international standards.">
-          HELM Technical Industrial Consulting nació en 2020 con la visión de transformar la industria ecuatoriana mediante soluciones técnicas innovadoras, seguras y sostenibles. Fundada por el ing Héctor Luzardo Mota, HELM se ha consolidado como un aliado estratégico para empresas que buscan optimizar sus procesos, garantizar la seguridad de sus operarios y cumplir con los más altos estándares internacionales.
+          data-en="HELM Technical Industrial Consulting was founded in 2020 with the vision of transforming Ecuador’s industrial sector through innovative, safe, and sustainable technical solutions. Founded by engineer Héctor Luzardo Mota, HELM has become a strategic partner for companies seeking to optimize operations, ensure worker safety, and meet the highest international standards.">
+          HELM Technical Industrial Consulting nació en 2020 con la visión de transformar la industria ecuatoriana
+          mediante soluciones técnicas innovadoras, seguras y sostenibles. Fundada por el ing Héctor Luzardo Mota, HELM
+          se ha consolidado como un aliado estratégico para empresas que buscan optimizar sus procesos, garantizar la
+          seguridad de sus operarios y cumplir con los más altos estándares internacionales.
         </p>
 
         <div class="history-values">
           <div class="value-item">
             <h3 data-es="Objetivo" data-en="Objective">Objetivo</h3>
-            <p data-es="Brindar asesoría técnica especializada que impulse la eficiencia, seguridad y sostenibilidad en el sector industrial." 
-               data-en="Provide specialized technical consulting that drives efficiency, safety, and sustainability in the industrial sector.">
-              Brindar asesoría técnica especializada que impulse la eficiencia, seguridad y sostenibilidad en el sector industrial.
+            <p data-es="Brindar asesoría técnica especializada que impulse la eficiencia, seguridad y sostenibilidad en el sector industrial."
+              data-en="Provide specialized technical consulting that drives efficiency, safety, and sustainability in the industrial sector.">
+              Brindar asesoría técnica especializada que impulse la eficiencia, seguridad y sostenibilidad en el sector
+              industrial.
             </p>
           </div>
           <div class="value-item">
             <h3 data-es="Meta" data-en="Goal">Meta</h3>
-            <p data-es="Convertirnos en referentes en Latinoamérica en consultoría industrial con enfoque humano y tecnológico." 
-               data-en="Become a leading reference in Latin America for industrial consulting with a human and technological approach.">
+            <p data-es="Convertirnos en referentes en Latinoamérica en consultoría industrial con enfoque humano y tecnológico."
+              data-en="Become a leading reference in Latin America for industrial consulting with a human and technological approach.">
               Convertirnos en referentes en Latinoamérica en consultoría industrial con enfoque humano y tecnológico.
             </p>
           </div>
           <div class="value-item">
             <h3 data-es="Valores" data-en="Values">Valores</h3>
-            <p data-es="<strong>Integridad:</strong> Actuamos con transparencia y ética profesional.<br><strong>Innovación:</strong> Buscamos soluciones creativas y adaptadas a cada cliente.<br><strong>Compromiso:</strong> Nos involucramos con la seguridad y el éxito de nuestros socios." 
-               data-en="<strong>Integrity:</strong> We act with transparency and professional ethics.<br><strong>Innovation:</strong> We seek creative, client-tailored solutions.<br><strong>Commitment:</strong> We are deeply invested in our partners’ safety and success.">
+            <p data-es="<strong>Integridad:</strong> Actuamos con transparencia y ética profesional.<br><strong>Innovación:</strong> Buscamos soluciones creativas y adaptadas a cada cliente.<br><strong>Compromiso:</strong> Nos involucramos con la seguridad y el éxito de nuestros socios."
+              data-en="<strong>Integrity:</strong> We act with transparency and professional ethics.<br><strong>Innovation:</strong> We seek creative, client-tailored solutions.<br><strong>Commitment:</strong> We are deeply invested in our partners’ safety and success.">
               <strong>Integridad:</strong> Actuamos con transparencia y ética profesional.<br>
               <strong>Innovación:</strong> Buscamos soluciones creativas y adaptadas a cada cliente.<br>
               <strong>Compromiso:</strong> Nos involucramos con la seguridad y el éxito de nuestros socios.
@@ -639,8 +824,8 @@
         </div>
         <div class="history-founder">
           <img src="img/fundador.jpg" alt="Héctor Luzardo Mota, Fundador de HELM" loading="lazy">
-          <p data-es="Ing. Héctor Luzardo Mota<br><em>Director General</em>" 
-             data-en="Eng. Héctor Luzardo Mota<br><em>Managing Director</em>">
+          <p data-es="Ing. Héctor Luzardo Mota<br><em>Director General</em>"
+            data-en="Eng. Héctor Luzardo Mota<br><em>Managing Director</em>">
             Ing. Héctor Luzardo Mota<br><em>Director General</em>
           </p>
         </div>
@@ -654,34 +839,48 @@
     <div class="services-grid">
       <div class="service-card">
         <i class="fas fa-cogs"></i>
-        <h3 data-es="Optimización de Procesos Industriales" data-en="Industrial Process Optimization">Optimización de Procesos Industriales</h3>
-        <p data-es="Identificamos cuellos de botella, ineficiencias y riesgos operativos en tus líneas de producción. Aplicamos metodologías avanzadas de ingeniería para reestructurar flujos de trabajo, reducir tiempos muertos y maximizar la productividad — sin comprometer la seguridad ni la calidad." 
-           data-en="We identify bottlenecks, inefficiencies, and operational risks in your production lines. Using advanced engineering methodologies, we restructure workflows to reduce downtime, boost productivity, and enhance output — all while maintaining safety and quality standards.">
-          Identificamos cuellos de botella, ineficiencias y riesgos operativos en tus líneas de producción. Aplicamos metodologías avanzadas de ingeniería para reestructurar flujos de trabajo, reducir tiempos muertos y maximizar la productividad — sin comprometer la seguridad ni la calidad.
+        <h3 data-es="Optimización de Procesos Industriales" data-en="Industrial Process Optimization">Optimización de
+          Procesos Industriales</h3>
+        <p data-es="Identificamos cuellos de botella, ineficiencias y riesgos operativos en tus líneas de producción. Aplicamos metodologías avanzadas de ingeniería para reestructurar flujos de trabajo, reducir tiempos muertos y maximizar la productividad — sin comprometer la seguridad ni la calidad."
+          data-en="We identify bottlenecks, inefficiencies, and operational risks in your production lines. Using advanced engineering methodologies, we restructure workflows to reduce downtime, boost productivity, and enhance output — all while maintaining safety and quality standards.">
+          Identificamos cuellos de botella, ineficiencias y riesgos operativos en tus líneas de producción. Aplicamos
+          metodologías avanzadas de ingeniería para reestructurar flujos de trabajo, reducir tiempos muertos y maximizar
+          la productividad — sin comprometer la seguridad ni la calidad.
         </p>
       </div>
       <div class="service-card">
         <i class="fas fa-shield-alt"></i>
-        <h3 data-es="Gestión Integral de Seguridad Industrial" data-en="Comprehensive Industrial Safety Management">Gestión Integral de Seguridad Industrial</h3>
-        <p data-es="Diseñamos e implementamos sistemas de gestión de seguridad alineados con estándares internacionales (ISO 45001, OSHA, entre otros). Evaluamos riesgos, capacitamos a tu personal y establecemos protocolos proactivos para prevenir accidentes, proteger activos humanos y cumplir con la normativa vigente." 
-           data-en="We design and implement safety management systems aligned with international standards (ISO 45001, OSHA, etc.). From risk assessments to workforce training and proactive protocols, we help you prevent incidents, protect your people, and ensure full regulatory compliance.">
-          Diseñamos e implementamos sistemas de gestión de seguridad alineados con estándares internacionales (ISO 45001, OSHA, entre otros). Evaluamos riesgos, capacitamos a tu personal y establecemos protocolos proactivos para prevenir accidentes, proteger activos humanos y cumplir con la normativa vigente.
+        <h3 data-es="Gestión Integral de Seguridad Industrial" data-en="Comprehensive Industrial Safety Management">
+          Gestión Integral de Seguridad Industrial</h3>
+        <p data-es="Diseñamos e implementamos sistemas de gestión de seguridad alineados con estándares internacionales (ISO 45001, OSHA, entre otros). Evaluamos riesgos, capacitamos a tu personal y establecemos protocolos proactivos para prevenir accidentes, proteger activos humanos y cumplir con la normativa vigente."
+          data-en="We design and implement safety management systems aligned with international standards (ISO 45001, OSHA, etc.). From risk assessments to workforce training and proactive protocols, we help you prevent incidents, protect your people, and ensure full regulatory compliance.">
+          Diseñamos e implementamos sistemas de gestión de seguridad alineados con estándares internacionales (ISO
+          45001, OSHA, entre otros). Evaluamos riesgos, capacitamos a tu personal y establecemos protocolos proactivos
+          para prevenir accidentes, proteger activos humanos y cumplir con la normativa vigente.
         </p>
       </div>
       <div class="service-card">
         <i class="fas fa-search"></i>
-        <h3 data-es="Auditorías Técnicas Especializadas" data-en="Specialized Technical Audits">Auditorías Técnicas Especializadas</h3>
-        <p data-es="Realizamos auditorías profundas de tus instalaciones, equipos, sistemas de control y procedimientos operativos. Nuestros informes incluyen hallazgos críticos, recomendaciones técnicas accionables y hojas de ruta para la mejora continua, asegurando confiabilidad, eficiencia energética y vida útil extendida de tus activos." 
-           data-en="We conduct in-depth audits of your facilities, equipment, control systems, and operational procedures. Our reports deliver critical findings, actionable technical recommendations, and clear roadmaps to enhance reliability, energy efficiency, and asset longevity.">
-          Realizamos auditorías profundas de tus instalaciones, equipos, sistemas de control y procedimientos operativos. Nuestros informes incluyen hallazgos críticos, recomendaciones técnicas accionables y hojas de ruta para la mejora continua, asegurando confiabilidad, eficiencia energética y vida útil extendida de tus activos.
+        <h3 data-es="Auditorías Técnicas Especializadas" data-en="Specialized Technical Audits">Auditorías Técnicas
+          Especializadas</h3>
+        <p data-es="Realizamos auditorías profundas de tus instalaciones, equipos, sistemas de control y procedimientos operativos. Nuestros informes incluyen hallazgos críticos, recomendaciones técnicas accionables y hojas de ruta para la mejora continua, asegurando confiabilidad, eficiencia energética y vida útil extendida de tus activos."
+          data-en="We conduct in-depth audits of your facilities, equipment, control systems, and operational procedures. Our reports deliver critical findings, actionable technical recommendations, and clear roadmaps to enhance reliability, energy efficiency, and asset longevity.">
+          Realizamos auditorías profundas de tus instalaciones, equipos, sistemas de control y procedimientos
+          operativos. Nuestros informes incluyen hallazgos críticos, recomendaciones técnicas accionables y hojas de
+          ruta para la mejora continua, asegurando confiabilidad, eficiencia energética y vida útil extendida de tus
+          activos.
         </p>
       </div>
       <div class="service-card">
         <i class="fas fa-heartbeat"></i>
-        <h3 data-es="Higiene y Salud Ocupacional" data-en="Occupational Hygiene and Health">Higiene y Salud Ocupacional</h3>
-        <p data-es="Implementamos programas integrales de salud ocupacional basados en evaluaciones de riesgos físicos, químicos, biológicos y ergonómicos. Monitoreamos condiciones ambientales de trabajo, promovemos la vigilancia médica y diseñamos estrategias para prevenir enfermedades laborales, garantizando un entorno seguro, saludable y conforme a la normativa local e internacional." 
-           data-en="We implement comprehensive occupational health programs based on assessments of physical, chemical, biological, and ergonomic hazards. We monitor workplace environmental conditions, support medical surveillance, and design strategies to prevent occupational illnesses, ensuring a safe, healthy, and compliant working environment.">
-          Implementamos programas integrales de salud ocupacional basados en evaluaciones de riesgos físicos, químicos, biológicos y ergonómicos. Monitoreamos condiciones ambientales de trabajo, promovemos la vigilancia médica y diseñamos estrategias para prevenir enfermedades laborales, garantizando un entorno seguro, saludable y conforme a la normativa local e internacional.
+        <h3 data-es="Higiene y Salud Ocupacional" data-en="Occupational Hygiene and Health">Higiene y Salud Ocupacional
+        </h3>
+        <p data-es="Implementamos programas integrales de salud ocupacional basados en evaluaciones de riesgos físicos, químicos, biológicos y ergonómicos. Monitoreamos condiciones ambientales de trabajo, promovemos la vigilancia médica y diseñamos estrategias para prevenir enfermedades laborales, garantizando un entorno seguro, saludable y conforme a la normativa local e internacional."
+          data-en="We implement comprehensive occupational health programs based on assessments of physical, chemical, biological, and ergonomic hazards. We monitor workplace environmental conditions, support medical surveillance, and design strategies to prevent occupational illnesses, ensuring a safe, healthy, and compliant working environment.">
+          Implementamos programas integrales de salud ocupacional basados en evaluaciones de riesgos físicos, químicos,
+          biológicos y ergonómicos. Monitoreamos condiciones ambientales de trabajo, promovemos la vigilancia médica y
+          diseñamos estrategias para prevenir enfermedades laborales, garantizando un entorno seguro, saludable y
+          conforme a la normativa local e internacional.
         </p>
       </div>
     </div>
@@ -698,24 +897,29 @@
   <!-- Redes Sociales -->
   <section id="redes" class="social-section">
     <div class="social-container">
-      <h2 class="social-title" data-es="Síguenos en Redes Sociales" data-en="Follow Us on Social Media">Síguenos en Redes Sociales</h2>
+      <h2 class="social-title" data-es="Síguenos en Redes Sociales" data-en="Follow Us on Social Media">Síguenos en
+        Redes Sociales</h2>
       <div class="social-links-main">
-        <a href="https://www.linkedin.com/in/hector-luzardo-mota-70237731" class="social-link linkedin" target="_blank" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/hector-luzardo-mota-70237731" class="social-link linkedin" target="_blank"
+          aria-label="LinkedIn">
           <i class="fab fa-linkedin-in"></i>
         </a>
         <a href="https://www.tiktok.com/@gestionesho" class="social-link tiktok" target="_blank" aria-label="TikTok">
           <i class="fab fa-tiktok"></i>
         </a>
         <a href="https://x.com/GestionEsho" class="social-link x" target="_blank" aria-label="X (formerly Twitter)">
-            <i class="fab fa-x-twitter"></i>
-          </a>
-        <a href="https://www.instagram.com/gestion.integral.esho/tagged/" class="social-link instagram" target="_blank" aria-label="Instagram">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/gestion.integral.esho/tagged/" class="social-link instagram" target="_blank"
+          aria-label="Instagram">
           <i class="fab fa-instagram"></i>
         </a>
-        <a href="https://www.facebook.com/profile.php?id=61583787556366" class="social-link facebook" target="_blank" aria-label="Facebook">
+        <a href="https://www.facebook.com/profile.php?id=61583787556366" class="social-link facebook" target="_blank"
+          aria-label="Facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
-        <a href="https://www.youtube.com/channel/UC5_ACTJyIC6V-_8hwgohkzA" class="social-link youtube" target="_blank" aria-label="YouTube">
+        <a href="https://www.youtube.com/channel/UC5_ACTJyIC6V-_8hwgohkzA" class="social-link youtube" target="_blank"
+          aria-label="YouTube">
           <i class="fab fa-youtube"></i>
         </a>
       </div>
@@ -759,13 +963,9 @@
         </a>
       </div>
       <div class="map-container">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3789.9523674057004!2d-79.93172992527364!3d-2.060906997920602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMsKwMDMnMzkuMyJTIDc5wrA1NSc0NS4wIlc!5e1!3m2!1ses-419!2sec!4v1761376758480!5m2!1ses-419!2sec" 
-          width="100%" 
-          height="100%" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3789.9523674057004!2d-79.93172992527364!3d-2.060906997920602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMsKwMDMnMzkuMyJTIDc5wrA1NSc0NS4wIlc!5e1!3m2!1ses-419!2sec!4v1761376758480!5m2!1ses-419!2sec"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
         </iframe>
       </div>
     </div>
@@ -826,4 +1026,5 @@
   </script>
 
 </body>
+
 </html>
